@@ -11,6 +11,7 @@ class Helper:
         self._project_directory = project_directory
         self._project_name = project_name
         self._git_repo = "https://github.com/microsoft/MLOpsPython.git"
+        print(self._project_directory)
 
     @property
     def project_directory(self):
@@ -130,6 +131,8 @@ def main(args):
                         required=True,
                         help="Name of the project [3-15 chars, letters and underscores only]")  # NOQA: E501
     try:
+        if (os.path.isdir("d:\Repos") is True):
+            print("It is dir")
         args = parser.parse_args()
 
         project_directory = args.directory
@@ -137,14 +140,7 @@ def main(args):
 
         helper = Helper(project_directory, project_name)
         helper.validate_args()
-        helper.clean_dir()
-
-        replace_project_name(project_directory, project_name, "diabetes_regression")  # NOQA: E501
-        replace_project_name(project_directory, project_name, "diabetes")
-
-        helper.rename_files()
-        helper.rename_dir()
-        helper.delete_dir()
+       
     except Exception as e:
         print(e)
 
