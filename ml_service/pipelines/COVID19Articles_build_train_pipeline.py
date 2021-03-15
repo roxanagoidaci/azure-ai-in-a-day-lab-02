@@ -58,11 +58,6 @@ def main():
 
     # Check to see if dataset exists
     if dataset_name not in aml_workspace.datasets:
-        # This call creates an example CSV from sklearn sample data. If you
-        # have already bootstrapped your project, you can comment this line
-        # out and use your own CSV.
-        #create_sample_data_csv()
-
         # Use a CSV to read in the data set.
         file_name = "COVID19Articles.csv"
 
