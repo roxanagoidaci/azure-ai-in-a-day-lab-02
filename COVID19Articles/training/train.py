@@ -27,23 +27,17 @@ POSSIBILITY OF SUCH DAMAGE.
 import os
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
-
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 
 
 # Split the dataframe into test and train data
 def split_data(df):
-    a = np.empty(0,dtype = str)
-    columns = np.append(a,np.arange(0, 128))
-
+    a = np.empty(0, dtype = str)
+    columns = np.append(a, np.arange(0, 128))
     y = df['cluster']
     X = df[columns]
-    
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.33, random_state=8)
     data = {"train": {"X": X_train, "y": y_train},
