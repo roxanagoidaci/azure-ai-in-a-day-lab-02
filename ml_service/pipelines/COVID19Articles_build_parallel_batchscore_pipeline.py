@@ -125,7 +125,7 @@ def get_fallback_input_dataset(ws: Workspace, env: Env) -> Dataset:
     """
     Called when an input datastore does not exist or no input data file exists
     at that location. Create a sample data using the covid dataset.
-    Useful when debugging this code in the absence of the input data 
+    Useful when debugging this code in the absence of the input data
     location Azure blob.
 
 
