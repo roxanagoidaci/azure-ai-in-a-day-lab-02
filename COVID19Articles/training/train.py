@@ -53,7 +53,7 @@ def split_data(df):
 
 # Train the model, return the model
 def train_model(data, class_args):
-    class_model = RandomForestClassifier(**class_args)
+    class_model = DecisionTreeClassifier(**class_args)
     class_model.fit(data["train"]["X"], data["train"]["y"])
     return class_model
 
@@ -80,7 +80,7 @@ def main():
     data = split_data(train_df)
 
     # Train the model
-    model = train_model(data, ridge_args)
+    model = train_model(data, class_args)
 
     # Log the metrics for the model
     metrics = get_model_metrics(model, data)
