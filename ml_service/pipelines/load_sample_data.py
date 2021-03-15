@@ -1,18 +1,18 @@
 
 import pandas as pd
-from sklearn.datasets import load_diabetes
 
 
-# Loads the COVID articles sample data from sklearn and produces a csv file that can
-# be used by the build/train pipeline script.
+# Loads the COVID articles sample data from dataset COVID19Articles_Test.
 def create_sample_data_csv(file_name: str = "metadata_clusters.csv",
                            for_scoring: bool = False):
-    sample_data = load_COVID19articles()
-    df = pd.DataFrame(
-        data=sample_data.data,
-        columns=sample_data.feature_names)
-    if not for_scoring:
-        df['cluster'] = sample_data.target
-    # Hard code to diabetes so we fail fast if the project has been
-    # bootstrapped.
+    sample_data = Dataset.get_by_name(ws, 'COVID19Articles_Test')
+    columns_to_ignore = ['sha', 'source_x', 'title', 'doi', 'pmcid', 'pubmed_id', 'license', 'abstract', 'publish_time', 'authors', 'journal', 'mag_id',
+                     'who_covidence_id', 'arxiv_id', 'pdf_json_files', 'pmc_json_files', 'url', 's2_id' ]
+    sample_data = sample_data.drop_columns(columns_to_ignore) 
+    
+    df = sample_data.to_pandas_dataframe()
+    
+    if for_scoring:
+        df = df.drop(columns=['cluster'])
+
     df.to_csv(file_name, index=False)
