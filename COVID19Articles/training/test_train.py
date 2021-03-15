@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from COVID19Articles.training.train import train_model, get_model_metrics
 
 
@@ -7,11 +6,9 @@ def test_train_model():
     X_train = np.array([1, 2, 3, 4, 5, 6]).reshape(-1, 1)
     y_train = np.array([10, 9, 8, 8, 6, 5])
     data = {"train": {"X": X_train, "y": y_train}}
-
     reg_model = train_model(data, {"max_depth": 5})
-
-    preds = model.predict([[1], [2]])
-    np.testing.assert_almost_equal(preds, [9.99999993939394, 9.00000003030303])     
+    preds = reg_model.predict([[1], [2]])
+    np.testing.assert_almost_equal(preds, [9.99999993939394, 9.00000003030303])
 
 
 def test_get_model_metrics():
@@ -30,4 +27,4 @@ def test_get_model_metrics():
 
     assert 'mse' in metrics
     mse = metrics['mse']
-    np.testing.assert_almost_equal(mse, 0.4999999998025707)
+    np.testing.assert_almost_equal(mse, 0.029843893480257067)

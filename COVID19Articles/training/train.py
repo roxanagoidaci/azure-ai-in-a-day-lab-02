@@ -34,7 +34,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 # Split the dataframe into test and train data
 def split_data(df):
-    a = np.empty(0, dtype = str)
+    a = np.empty(0, dtype=str)
     columns = np.append(a, np.arange(0, 128))
     y = df['cluster']
     X = df[columns]
