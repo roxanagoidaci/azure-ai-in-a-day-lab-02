@@ -7,7 +7,7 @@ def test_train_model():
     y_train = np.array([10, 9, 8, 8, 6, 5])
     data = {"train": {"X": X_train, "y": y_train}}
 
-    reg_model = train_model(data, {"alpha": 1.2})
+    reg_model = train_model(data, {"max_depth": 5})
 
     preds = reg_model.predict([[1], [2]])
     np.testing.assert_almost_equal(preds, [9.93939393939394, 9.03030303030303])
