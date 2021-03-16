@@ -5,8 +5,7 @@ from azureml.core import Workspace, Dataset
 def create_sample_data_csv(file_name: str = "COVID19Articles.csv",
                            for_scoring: bool = False):
 
-    ws = Workspace.from_config()
-    sample_data = Dataset.get_by_name(ws, 'COVID19Articles_Test')
+    sample_data = Dataset.File.from_files('https://solliancepublicdata.blob.core.windows.net/ai-in-a-day/lab-02/COVID19Articles.csv')
     df = sample_data.to_pandas_dataframe()
     if for_scoring:
         df = df.drop(columns=['cluster'])
