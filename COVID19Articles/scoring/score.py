@@ -85,7 +85,7 @@ def run(data, request_headers):
 if __name__ == "__main__":
     # Test scoring
     init()
-    list_of_num = [np.arange(1, 129).tolist(), np.arange(128, 0, -1).tolist()]
-    test_row = '{"data":%s}' %list_of_num
+    list_of_num = [numpy.arange(1, 129).tolist(), numpy.arange(128, 0, -1).tolist()]
+    test_row = '{"data":%s}' % list_of_num
     prediction = run(test_row, {})
     print("Test result: ", prediction)
