@@ -86,7 +86,7 @@ if __name__ == "__main__":
     # Test scoring
     init()
     list_of_num = [
-      numpy.arange(1, 129).tolist(), 
+      numpy.arange(1, 129).tolist(),
       numpy.arange(128, 0, -1).tolist()]
     test_row = '{"data":%s}' % list_of_num
     prediction = run(test_row, {})
