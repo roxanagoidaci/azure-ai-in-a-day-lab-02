@@ -46,7 +46,7 @@ def init():
 
     model = joblib.load(model_path)
 
-numpy.
+
 input_sample = numpy.array([
     numpy.arange(1.0, 129.0).tolist(),
     numpy.arange(128.0, 0, -1).tolist()])
