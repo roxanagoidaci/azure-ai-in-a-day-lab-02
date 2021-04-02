@@ -40,7 +40,7 @@ To bootstrap from the existing MLOpsPython repository:
 
 ## Configure training data
 
-The training ML pipeline uses a [sample diabetes dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html) as training data.
+The training ML pipeline uses a [sample COVID19Articles dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_COVID19Articles.html) as training data.
 
 **Important** Convert the template to use your own Azure ML Dataset for model training via these steps:
 
@@ -117,7 +117,7 @@ Configure the variables below in your variable group.
 | SCORING_DATASTORE_ACCESS_KEY      |                  | [Azure Storage Account Key](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-requests-to-azure-storage). You may want to consider linking this variable to Azure KeyVault to avoid storing the access key in plain text. |
 | SCORING_DATASTORE_INPUT_CONTAINER |                  | The name of the container for input data. Defaults to `input` if not set.  |
 | SCORING_DATASTORE_OUTPUT_CONTAINER|                  | The name of the container for output data. Defaults to `output` if not set.  |
-| SCORING_DATASTORE_INPUT_FILENAME  |                  | The filename of the input data in your container Defaults to `diabetes_scoring_input.csv` if not set.  |
-| SCORING_DATASET_NAME              |                  | The AzureML Dataset name to use. Defaults to `diabetes_scoring_ds` if not set (optional).  |
-| SCORING_DATASTORE_OUTPUT_FILENAME |                  | The filename to use for the output data. The pipeline will create this file. Defaults to `diabetes_scoring_output.csv` if not set (optional).  |
+| SCORING_DATASTORE_INPUT_FILENAME  |                  | The filename of the input data in your container Defaults to `COVID19Articles_scoring_input.csv` if not set.  |
+| SCORING_DATASET_NAME              |                  | The AzureML Dataset name to use. Defaults to `COVID19Articles_scoring_ds` if not set (optional).  |
+| SCORING_DATASTORE_OUTPUT_FILENAME |                  | The filename to use for the output data. The pipeline will create this file. Defaults to `COVID19Articles_scoring_output.csv` if not set (optional).  |
 

@@ -1,8 +1,8 @@
 # Getting Started with MLOpsPython <!-- omit in toc -->
 
-This guide shows how to get MLOpsPython working with a sample ML project **_COVID19Articles_**. The project creates a linear regression model to predict diabetes and has CI/CD DevOps practices enabled for model training and serving when these steps are completed in this getting started guide.
+This guide shows how to get MLOpsPython working with a sample ML project **_COVID19Articles_**. The project creates a linear regression model to predict COVID19Articles and has CI/CD DevOps practices enabled for model training and serving when these steps are completed in this getting started guide.
 
-If you would like to bring your own model code to use this template structure, follow the [custom model](custom_model.md) guide. We recommend completing this getting started guide with the diabetes model through ACI deployment first to ensure everything is working in your environment before converting the template to use your own model code.
+If you would like to bring your own model code to use this template structure, follow the [custom model](custom_model.md) guide. We recommend completing this getting started guide with the COVID19Articles model through ACI deployment first to ensure everything is working in your environment before converting the template to use your own model code.
 
 - [Setting up Azure DevOps](#setting-up-azure-devops)
   - [Install the Azure Machine Learning extension](#install-the-azure-machine-learning-extension)
@@ -13,9 +13,17 @@ If you would like to bring your own model code to use this template structure, f
   - [Create an Azure DevOps Service Connection for the Azure Resource Manager](#create-an-azure-devops-service-connection-for-the-azure-resource-manager)
   - [Create the IaC Pipeline](#create-the-iac-pipeline)
 - [Create an Azure DevOps Service Connection for the Azure ML Workspace](#create-an-azure-devops-service-connection-for-the-azure-ml-workspace)
-- [Set up Build, Release Trigger, and Release Multi-Stage Pipeline](#set-up-build-release-trigger-and-release-multi-stage-pipelines)
-  - [Set up the Model CI Training, Evaluation, and Registration Pipeline](#set-up-the-model-ci-training-evaluation-and-registration-pipeline)
-  - [Set up the Release Deployment and/or Batch Scoring Pipelines](#set-up-the-release-deployment-andor-batch-scoring-pipelines)
+- [Set up Build, Release Trigger, and Release Multi-Stage Pipelines](#set-up-build-release-trigger-and-release-multi-stage-pipelines)
+  - [Set up the Model CI, training, evaluation, and registration pipeline](#set-up-the-model-ci-training-evaluation-and-registration-pipeline)
+    - [Model CI](#model-ci)
+    - [Train model](#train-model)
+    - [Create pipeline artifact](#create-pipeline-artifact)
+  - [Set up the Release Deployment and/or Batch Scoring pipelines](#set-up-the-release-deployment-andor-batch-scoring-pipelines)
+  - [Set up the Release Deployment pipeline](#set-up-the-release-deployment-pipeline)
+    - [Deploy to ACI](#deploy-to-aci)
+  - [Set up the Batch Scoring pipeline](#set-up-the-batch-scoring-pipeline)
+    - [Batch Scoring CI](#batch-scoring-ci)
+    - [Batch Score model](#batch-score-model)
 - [Further Exploration](#further-exploration)
   - [Deploy the model to Azure Kubernetes Service](#deploy-the-model-to-azure-kubernetes-service)
     - [Web Service Authentication on Azure Kubernetes Service](#web-service-authentication-on-azure-kubernetes-service)

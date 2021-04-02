@@ -140,7 +140,6 @@ def main(args):
         helper.clean_dir()
 
         replace_project_name(project_directory, project_name, "COVID19Articles")  # NOQA: E501
-        replace_project_name(project_directory, project_name, "diabetes")
 
         helper.rename_files()
         helper.rename_dir()
