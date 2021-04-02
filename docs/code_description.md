@@ -93,5 +93,5 @@ The repository provides a template with folders structure suitable for maintaini
 ### Scoring
 
 - `COVID19Articles/scoring/score.py` : a scoring script which is about to be packed into a Docker Image along with a model while being deployed to QA/Prod environment.
-- `COVID19Articles/scoring/inference_config.yml`, `deployment_config_aci.yml`, `deployment_config_aks.yml` : configuration files for the [AML Model Deploy](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility.private-vss-services-azureml&ssr=false#overview) pipeline task for ACI and AKS deployment targets.
+- `COVID19Articles/scoring/inference_config.yml`, `deployment_config_aci.yml`, `deployment_config_aks.yml` : configuration files for the [AML Model Deploy](https://marketplace.visualstudio.com/items?itemName=ms-air-aiagility-vss-services-azureml&ssr=false#overview) pipeline task for ACI and AKS deployment targets.
 - `COVID19Articles/scoring/scoreA.py`, `COVID19Articles/scoring/scoreB.py` : simplified scoring files for the [Canary deployment sample](./docs/canary_ab_deployment.md).
