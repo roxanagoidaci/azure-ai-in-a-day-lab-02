@@ -39,11 +39,11 @@ provision a separate instance.
 ## Update the environment definition
 
 Modify the [Dockerfile](../environment_setup/Dockerfile) and/or the
-[ci_dependencies.yml](../diabetes_regression/ci_dependencies.yml) CI Conda
+[ci_dependencies.yml](../COVID19Articles/ci_dependencies.yml) CI Conda
 environment definition to tailor your environment.
 Conda provides a [reusable environment for training and deployment with Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-use-environments).
 The Conda environment used for CI should use the same package versions as the Conda environment
-used for the Azure ML training and scoring environments (defined in [conda_dependencies.yml](../diabetes_regression/conda_dependencies.yml)).
+used for the Azure ML training and scoring environments (defined in [conda_dependencies.yml](../COVID19Articles/conda_dependencies.yml)).
 This enables you to run unit and integration tests using the exact same dependencies as used in the ML pipeline.
 
 If a package is available in a Conda package repository, then we recommend that
@@ -59,7 +59,7 @@ pipeline definition in your forked repository.
 
 Edit the [environment_setup/docker-image-pipeline.yml](../environment_setup/docker-image-pipeline.yml) file
 and modify the string `'public/mlops/python'` with an name suitable to describe your environment,
-e.g. `'mlops/diabetes_regression'`.
+e.g. `'mlops/COVID19Articles'`.
 
 Save and run the pipeline, making sure to set the these runtime variables: `amlsdkversion` and `githubrelease`. The values are up to you to set depending on your environment. These will show as tags on your image.
 
@@ -71,7 +71,7 @@ run from that image.
 
 ## Modify the model pipeline
 
-Modify the model pipeline file [diabetes_regression-ci.yml](../.pipelines/diabetes_regression-ci.yml) by replacing this section:
+Modify the model pipeline file [COVID19Articles-ci.yml](../.pipelines/COVID19Articles-ci.yml) by replacing this section:
 
 ```
 resources:
@@ -86,7 +86,7 @@ with (using the image name previously defined):
 resources:
   containers:
   - container: mlops
-    image: mlops/diabetes_regression
+    image: mlops/COVID19Articles
     endpoint: acrconnection
 ```
 
@@ -98,16 +98,16 @@ Especially when working in a team, it's possible for environment changes across 
 
 For example, if the master branch is using scikit-learn and you create a branch to use Tensorflow instead, and you
 decide to remove scikit-learn from the
-[ci_dependencies.yml](../diabetes_regression/ci_dependencies.yml) Conda environment definition
+[ci_dependencies.yml](../COVID19Articles/ci_dependencies.yml) Conda environment definition
 and run the [docker-image-pipeline.yml](../environment_setup/docker-image-pipeline.yml) Docker image,
 then the master branch will stop building.
 
 You could leave scikit-learn in addition to Tensorflow in the environment, but that is not ideal, as you would have to take an extra step to remove scikit-learn after merging your branch to master.
 
-A better approach would be to use a distinct name for your modified environment, such as `mlops/diabetes_regression/tensorflow`.
+A better approach would be to use a distinct name for your modified environment, such as `mlops/COVID19Articles/tensorflow`.
 By changing the name of the image in your branch in both the container build pipeline
 [environment_setup/docker-image-pipeline.yml](../environment_setup/docker-image-pipeline.yml)
 and the model pipeline file
-[diabetes_regression-ci.yml](../.pipelines/diabetes_regression-ci.yml),
+[COVID19Articles-ci.yml](../.pipelines/COVID19Articles-ci.yml),
 and running both pipelines in sequence on your branch,
 you avoid any branch conflicts, and the name does not have to be changed after merging to master.

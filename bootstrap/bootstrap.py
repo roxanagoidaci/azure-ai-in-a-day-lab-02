@@ -25,8 +25,8 @@ class Helper:
         return self._git_repo
 
     def rename_files(self):
-        # Rename all files starting with diabetes_regression with project name
-        strtoreplace = "diabetes_regression"
+        # Rename all files starting with COVID19Articles with project name
+        strtoreplace = "COVID19Articles"
         dirs = [".pipelines", r"ml_service/pipelines"]
         for dir in dirs:
             normDir = os.path.normpath(dir)
@@ -40,7 +40,7 @@ class Helper:
                     os.rename(src, dst)
 
     def rename_dir(self):
-        dir = "diabetes_regression"
+        dir = "COVID19Articles"
         src = os.path.join(self._project_directory, dir)
         for path, subdirs, files in os.walk(src):
             for name in files:
@@ -53,7 +53,7 @@ class Helper:
 
     def delete_dir(self):
         # Delete unwanted directories
-        dirs = ["docs", r"diabetes_regression"]
+        dirs = ["docs", r"COVID19Articles"]
         if (platform.system() == "Windows"):
             cmd = 'rmdir /S /Q "{}"'
         else:
@@ -84,25 +84,25 @@ def replace_project_name(project_dir, project_name, rename_name):
     files = [r".env.example",
             r".pipelines/code-quality-template.yml",
             r".pipelines/pr.yml",
-            r".pipelines/diabetes_regression-cd.yml",
-            r".pipelines/diabetes_regression-ci.yml",
+            r".pipelines/COVID19Articles-cd.yml",
+            r".pipelines/COVID19Articles-ci.yml",
             r".pipelines/abtest.yml",
-            r".pipelines/diabetes_regression-ci-image.yml",
-            r".pipelines/diabetes_regression-publish-model-artifact-template.yml",  # NOQA: E501
-            r".pipelines/diabetes_regression-get-model-id-artifact-template.yml",  # NOQA: E501
-            r".pipelines/diabetes_regression-batchscoring-ci.yml",
-            r".pipelines/diabetes_regression-variables-template.yml",
+            r".pipelines/COVID19Articles-ci-image.yml",
+            r".pipelines/COVID19Articles-publish-model-artifact-template.yml",  # NOQA: E501
+            r".pipelines/COVID19Articles-get-model-id-artifact-template.yml",  # NOQA: E501
+            r".pipelines/COVID19Articles-batchscoring-ci.yml",
+            r".pipelines/COVID19Articles-variables-template.yml",
             r"environment_setup/Dockerfile",
             r"environment_setup/install_requirements.sh",
-            r"ml_service/pipelines/diabetes_regression_build_parallel_batchscore_pipeline.py",  # NOQA: E501
-            r"ml_service/pipelines/diabetes_regression_build_train_pipeline_with_r_on_dbricks.py",  # NOQA: E501
-            r"ml_service/pipelines/diabetes_regression_build_train_pipeline_with_r.py",  # NOQA: E501
-            r"ml_service/pipelines/diabetes_regression_build_train_pipeline.py",  # NOQA: E501
+            r"ml_service/pipelines/COVID19Articles_build_parallel_batchscore_pipeline.py",  # NOQA: E501
+            r"ml_service/pipelines/COVID19Articles_build_train_pipeline_with_r_on_dbricks.py",  # NOQA: E501
+            r"ml_service/pipelines/COVID19Articles_build_train_pipeline_with_r.py",  # NOQA: E501
+            r"ml_service/pipelines/COVID19Articles_build_train_pipeline.py",  # NOQA: E501
             r"ml_service/util/create_scoring_image.py",
-            r"diabetes_regression/conda_dependencies.yml",
-            r"diabetes_regression/evaluate/evaluate_model.py",
-            r"diabetes_regression/register/register_model.py",
-            r"diabetes_regression/training/test_train.py"]
+            r"COVID19Articles/conda_dependencies.yml",
+            r"COVID19Articles/evaluate/evaluate_model.py",
+            r"COVID19Articles/register/register_model.py",
+            r"COVID19Articles/training/test_train.py"]
 
     for file in files:
         path = os.path.join(project_dir, os.path.normpath(file))
@@ -139,7 +139,7 @@ def main(args):
         helper.validate_args()
         helper.clean_dir()
 
-        replace_project_name(project_directory, project_name, "diabetes_regression")  # NOQA: E501
+        replace_project_name(project_directory, project_name, "COVID19Articles")  # NOQA: E501
         replace_project_name(project_directory, project_name, "diabetes")
 
         helper.rename_files()

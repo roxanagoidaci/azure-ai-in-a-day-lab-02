@@ -22,11 +22,11 @@ Take a look at the [Repo Details](code_description.md) document for a descriptio
 
 Bootstrapping will prepare the directory structure to be used for your project name which includes:
 
-* renaming files and folders from the base project name `diabetes_regression` to your project name
+* renaming files and folders from the base project name `COVID19Articles` to your project name
 * fixing imports and absolute path based on your project name
 * deleting and cleaning up some directories
 
-**Note:** Since the bootstrap script will rename the `diabetes_regression` folder to the project name of your choice, we'll refer to your project as `[project name]` when paths are involved.
+**Note:** Since the bootstrap script will rename the `COVID19Articles` folder to the project name of your choice, we'll refer to your project as `[project name]` when paths are involved.
 
 To bootstrap from the existing MLOpsPython repository:
 
