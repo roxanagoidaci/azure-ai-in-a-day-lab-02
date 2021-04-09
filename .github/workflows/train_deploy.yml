@@ -6,7 +6,7 @@ on:
     branches:
       - master
     #paths:
-    #  - 'github_actions_code/*'
+    #  - 'code/*'
 
 jobs:
   train:
