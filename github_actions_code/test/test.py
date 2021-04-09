@@ -7,7 +7,6 @@ from azureml.core.webservice import AksWebservice, AciWebservice
 from ml_service.util.env_variables import Env
 import secrets
 
-
 list_of_num = [
       numpy.arange(1, 129).tolist(),
       numpy.arange(128, 0, -1).tolist()]
