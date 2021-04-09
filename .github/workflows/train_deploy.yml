@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'COVID19Articles_GH/*'
+      - 'COVID19Articles_GH/**'
 
 jobs:
   train-register:
