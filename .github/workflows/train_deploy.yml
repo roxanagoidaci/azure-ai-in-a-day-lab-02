@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - master
-    #paths:
+    paths:
       - 'COVID19Articles_GH/*'
 
 jobs:
