@@ -8,17 +8,11 @@ import joblib
 import json
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
-
+from sklearn.tree import DecisionTreeClassifier
 
 from azureml.core.run import Run
 from azureml.core import Dataset, Datastore, Workspace
 
-# import os
-import pandas as pd
-import numpy as np
-from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
 
 
 # Split the dataframe into test and train data
