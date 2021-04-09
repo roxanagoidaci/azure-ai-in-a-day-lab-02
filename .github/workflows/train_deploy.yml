@@ -15,7 +15,7 @@ jobs:
       model_name: ${{ steps.aml_registermodel.outputs.model_name }}
       model_version: ${{ steps.aml_registermodel.outputs.model_version }}
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it x
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check Out Repository
       id: checkout_repository
       uses: actions/checkout@v2
