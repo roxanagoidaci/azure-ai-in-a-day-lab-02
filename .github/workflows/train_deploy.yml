@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'github_actions_code/*'
+    #paths:
+    #  - 'github_actions_code/*'
 
 jobs:
   train:
