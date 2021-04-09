@@ -6,11 +6,14 @@ on:
     branches:
       - master
     #paths:
-    #  - 'code/*'
+      - 'COVID19Articles_GH/*'
 
 jobs:
   train-register:
     runs-on: ubuntu-latest
+    outputs:
+      model_name: ${{ steps.aml_registermodel.outputs.model_name }}
+      model_version: ${{ steps.aml_registermodel.outputs.model_version }}
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check Out Repository
@@ -46,15 +49,29 @@ jobs:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
           run_id:  ${{ steps.aml_run.outputs.run_id }}
           experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
+          
   deploy:
-    needs : train-register
+    needs: train-register
     runs-on: ubuntu-latest
     steps:
+    
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Check Out Repository
+      id: checkout_repository
+      uses: actions/checkout@v2
+      
+    # Connect or Create the Azure Machine Learning Workspace
+    - name: Connect/Create Azure Machine Learning Workspace
+      id: aml_workspace
+      uses: Azure/aml-workspace@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+    
     # Deploy model in Azure Machine Learning to ACI
     - name: Deploy model
       id: aml_deploy
       uses: Azure/aml-deploy@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-          model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
-          model_version: ${{ steps.aml_registermodel.outputs.model_version }}
+          model_name:  ${{ needs.train-register.outputs.model_name }}
+          model_version: ${{ needs.train-register.outputs.model_version }}
