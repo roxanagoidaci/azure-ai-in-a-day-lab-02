@@ -1,3 +1,4 @@
+# flake8: noqa
 import numpy
 import joblib
 import os
@@ -66,4 +67,3 @@ if __name__ == "__main__":
     test_row = '{"data":%s}' % list_of_num
     prediction = run(test_row, {})
     print("Test result: ", prediction)
-

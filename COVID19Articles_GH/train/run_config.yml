@@ -1,3 +1,4 @@
+# flake8: noqa
 # The script to run.
 script: train_aml.py
 # The arguments to the script file.

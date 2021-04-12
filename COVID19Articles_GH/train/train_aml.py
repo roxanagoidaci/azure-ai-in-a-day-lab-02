@@ -1,17 +1,16 @@
-  
+# flake8: noqa
 import os
 import argparse
-import itertools
 import numpy as np
 import pandas as pd
 import joblib
-import json
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 from azureml.core.run import Run
 from azureml.core import Dataset, Datastore, Workspace
+
 
 # Split the dataframe into test and train data
 def split_data(df):
@@ -39,6 +38,7 @@ def get_model_metrics(model, data):
     mse = mean_squared_error(preds, data["test"]["y"])
     metrics = {"mse": mse}
     return metrics
+
 
 def create_sample_data_csv(
     aml_workspace: Workspace,
