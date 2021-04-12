@@ -5,14 +5,14 @@ trigger:
     - master
   paths:
     include:
-    - environment_setup/tf-templates/*
+    - COVID19Articles/environment_setup/tf-templates/*
 pr:
   branches:
     include:
     - master
   paths:
     include:
-    - environment_setup/tf-templates/*
+    - COVID19Articles/environment_setup/tf-templates/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -30,8 +30,8 @@ steps:
   displayName: 'TF init - Deploy MLOps resources to Azure'
   inputs:
     command: init
-    commandOptions: '-backend=true -backend-config=$(Build.SourcesDirectory)/environment_setup/tf-templates/backend.tf'
-    workingDirectory: '$(Build.SourcesDirectory)/environment_setup/tf-templates'
+    commandOptions: '-backend=true -backend-config=$(Build.SourcesDirectory)/COVID19Articles/environment_setup/tf-templates/backend.tf'
+    workingDirectory: '$(Build.SourcesDirectory)/COVID19Articles/environment_setup/tf-templates'
     backendType: azurerm
     backendServiceArm: $(AZURE_RM_SVC_CONNECTION)
     ensureBackend: true
@@ -46,13 +46,13 @@ steps:
   displayName: 'TF validate - Deploy MLOps resources to Azure'
   inputs:
     command: validate
-    workingDirectory: '$(Build.SourcesDirectory)/environment_setup/tf-templates'
+    workingDirectory: '$(Build.SourcesDirectory)/COVID19Articles/environment_setup/tf-templates'
 
 - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
   displayName: 'TF plan - Deploy MLOps resources to Azure'
   inputs:
     command: plan
-    workingDirectory: '$(Build.SourcesDirectory)/environment_setup/tf-templates'
+    workingDirectory: '$(Build.SourcesDirectory)/COVID19Articles//tf-templates'
     environmentServiceName: $(AZURE_RM_SVC_CONNECTION)
   env:
     TF_VAR_BASE_NAME: $(BASE_NAME)
@@ -63,7 +63,7 @@ steps:
   displayName: 'TF apply - Deploy MLOps resources to Azure'
   inputs:
     command: apply
-    workingDirectory: '$(Build.SourcesDirectory)/environment_setup/tf-templates'
+    workingDirectory: '$(Build.SourcesDirectory)/COVID19Articles/environment_setup/tf-templates'
     environmentServiceName: $(AZURE_RM_SVC_CONNECTION)
   env:
     TF_VAR_BASE_NAME: $(BASE_NAME)

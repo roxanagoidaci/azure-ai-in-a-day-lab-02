@@ -13,7 +13,7 @@ trigger:
   paths:
     exclude:
     - docs/
-    - environment_setup/
+    - COVID19Articles/environment_setup/
     - COVID19Articles/ml_service/util/create_scoring_image.*
     - COVID19Articles/ml_service/util/smoke_test_scoring_service.py
 

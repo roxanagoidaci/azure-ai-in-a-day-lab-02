@@ -5,14 +5,14 @@ trigger:
       - master
   paths:
     include:
-      - environment_setup/arm-templates/*
+      - COVID19Articles/environment_setup/arm-templates/*
 pr:
   branches:
     include:
       - master
   paths:
     include:
-      - environment_setup/arm-templates/*
+      - COVID19Articles/environment_setup/arm-templates/*
 
 pool:
   vmImage: "ubuntu-latest"

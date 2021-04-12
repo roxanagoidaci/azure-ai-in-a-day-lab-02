@@ -12,7 +12,7 @@ trigger:
 
   paths:
     include:
-    - environment_setup/Dockerfile
+    - COVID19Articles/environment_setup/Dockerfile
 
 variables:
   containerRegistry: $[coalesce(variables['acrServiceConnection'], 'acrconnection')]
