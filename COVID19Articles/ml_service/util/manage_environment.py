@@ -1,7 +1,7 @@
 
 import os
 from azureml.core import Workspace, Environment
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 from azureml.core.runconfig import DEFAULT_CPU_IMAGE, DEFAULT_GPU_IMAGE
 
 

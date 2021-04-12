@@ -25,10 +25,10 @@ POSSIBILITY OF SUCH DAMAGE.
 """
 import os
 from azureml.pipeline.steps import ParallelRunConfig, ParallelRunStep
-from ml_service.util.manage_environment import get_environment
-from ml_service.pipelines.load_sample_data import create_sample_data_csv
-from ml_service.util.env_variables import Env
-from ml_service.util.attach_compute import get_compute
+from COVID19Articles.ml_service.util.manage_environment import get_environment
+from COVID19Articles.ml_service.pipelines.load_sample_data import create_sample_data_csv
+from COVID19Articles.ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.attach_compute import get_compute
 from azureml.core import (
     Workspace,
     Dataset,

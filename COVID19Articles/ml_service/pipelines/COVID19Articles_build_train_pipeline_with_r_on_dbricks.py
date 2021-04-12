@@ -1,8 +1,8 @@
 from azureml.pipeline.core import Pipeline
 from azureml.core import Workspace
-from ml_service.util.attach_compute import get_compute
+from COVID19Articles.ml_service.util.attach_compute import get_compute
 from azureml.pipeline.steps import DatabricksStep
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 
 
 def main():

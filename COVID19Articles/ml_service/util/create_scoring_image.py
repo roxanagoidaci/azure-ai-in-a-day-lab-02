@@ -4,7 +4,7 @@ from azureml.core import Workspace
 from azureml.core.environment import Environment
 from azureml.core.model import Model, InferenceConfig
 import shutil
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 
 e = Env()
 

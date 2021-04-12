@@ -65,7 +65,7 @@ stages:
           set -e # fail on error
           export SUBSCRIPTION_ID=$(az account show --query id -o tsv)
           # Invoke the Python building and publishing a training pipeline
-          python -m ml_service.pipelines.COVID19Articles_build_parallel_batchscore_pipeline
+          python -m COVID19Articles.ml_service.pipelines.COVID19Articles_build_parallel_batchscore_pipeline
       env:
         SCORING_DATASTORE_ACCESS_KEY: $(SCORING_DATASTORE_ACCESS_KEY)
 

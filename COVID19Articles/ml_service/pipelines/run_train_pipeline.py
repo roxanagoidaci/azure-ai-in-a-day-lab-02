@@ -1,7 +1,7 @@
 from azureml.pipeline.core import PublishedPipeline
 from azureml.core import Experiment, Workspace
 import argparse
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 
 
 def main():

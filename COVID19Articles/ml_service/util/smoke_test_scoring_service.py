@@ -4,7 +4,7 @@ import time
 import numpy
 from azureml.core import Workspace
 from azureml.core.webservice import AksWebservice, AciWebservice
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 import secrets
 
 

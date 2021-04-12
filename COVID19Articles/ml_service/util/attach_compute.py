@@ -3,7 +3,7 @@ from azureml.core import Workspace
 from azureml.core.compute import AmlCompute
 from azureml.core.compute import ComputeTarget
 from azureml.exceptions import ComputeTargetException
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 
 
 def get_compute(workspace: Workspace, compute_name: str, vm_size: str, for_batch_scoring: bool = False):  # NOQA E501

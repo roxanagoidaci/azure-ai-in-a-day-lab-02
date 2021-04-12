@@ -25,7 +25,7 @@ POSSIBILITY OF SUCH DAMAGE.
 """
 
 from azure.storage.blob import ContainerClient
-from ml_service.util.env_variables import Env
+from COVID19Articles.ml_service.util.env_variables import Env
 from azureml.core import Experiment, Workspace
 from azureml.pipeline.core import PublishedPipeline
 import argparse
