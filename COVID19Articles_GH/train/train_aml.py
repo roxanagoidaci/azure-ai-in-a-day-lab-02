@@ -178,9 +178,6 @@ def main():
     for (k, v) in metrics.items():
         run.log(k, v)
         
-   
-  
-    
     # files saved in the "outputs" folder are automatically uploaded into run history
     model_file_name = "COVID19Articles_model.pkl"
     joblib.dump(model, os.path.join('outputs', model_file_name))
