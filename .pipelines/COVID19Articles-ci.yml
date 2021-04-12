@@ -13,9 +13,9 @@ trigger:
   paths:
     include:
     - COVID19Articles/
-    - ml_service/pipelines/COVID19Articles_build_train_pipeline.py
-    - ml_service/pipelines/COVID19Articles_build_train_pipeline_with_r.py
-    - ml_service/pipelines/COVID19Articles_build_train_pipeline_with_r_on_dbricks.py
+    - COVID19Articles/ml_service/pipelines/COVID19Articles_build_train_pipeline.py
+    - COVID19Articles/ml_service/pipelines/COVID19Articles_build_train_pipeline_with_r.py
+    - COVID19Articles/ml_service/pipelines/COVID19Articles_build_train_pipeline_with_r_on_dbricks.py
 
 variables:
 - template: COVID19Articles-variables-template.yml

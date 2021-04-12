@@ -14,8 +14,8 @@ trigger:
     exclude:
     - docs/
     - environment_setup/
-    - ml_service/util/create_scoring_image.*
-    - ml_service/util/smoke_test_scoring_service.py
+    - COVID19Articles/ml_service/util/create_scoring_image.*
+    - COVID19Articles/ml_service/util/smoke_test_scoring_service.py
 
 variables:
 - template: COVID19Articles-variables-template.yml

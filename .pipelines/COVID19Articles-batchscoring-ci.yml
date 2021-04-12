@@ -29,8 +29,8 @@ trigger:
   paths:
     include:
     - COVID19Articles/scoring/parallel_batchscore.py
-    - ml_service/pipelines/COVID19Articles_build_parallel_batchscore_pipeline.py
-    - ml_service/pipelines/run_parallel_batchscore_pipeline.py
+    - COVID19Articles/ml_service/pipelines/COVID19Articles_build_parallel_batchscore_pipeline.py
+    - COVID19Articles/ml_service/pipelines/run_parallel_batchscore_pipeline.py
 
 variables:
 - template: COVID19Articles-variables-template.yml
