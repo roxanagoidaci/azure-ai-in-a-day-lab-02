@@ -74,7 +74,7 @@ def get_or_create_datastore(
     # the datastore is not registered but we have all details to register it
     elif (
         env.scoring_datastore_access_key is not None
-        and containername is not None  # NOQA: E501
+        and containername is not None  # NOQA: E501,W503
     ):  # NOQA:E501
 
         datastore = Datastore.register_azure_blob_container(
